@@ -1,4 +1,4 @@
-package com.jonathan.course.servicies;
+package com.jonathan.course.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,8 +20,8 @@ public class UserService {
 	}
 	
 	public User findById(Long id) {
-		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		Optional<User> user = repository.findById(id);
+		return user.get();
 	}
 
 }
