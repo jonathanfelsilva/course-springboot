@@ -3,13 +3,22 @@ package com.jonathan.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jonathan.course.entities.pk.OrderItemPK;
 
+
+@Entity
+@Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private OrderItemPK id;
+	@EmbeddedId
+	private OrderItemPK id = new OrderItemPK();
 
 	private Integer quantity;
 	private Double price;
@@ -27,7 +36,7 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 	
-	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
