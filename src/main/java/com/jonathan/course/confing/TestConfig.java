@@ -18,7 +18,6 @@ import com.jonathan.course.entities.enums.OrderStatus;
 import com.jonathan.course.repositories.CategoryRepository;
 import com.jonathan.course.repositories.OrderItemRepository;
 import com.jonathan.course.repositories.OrderRepository;
-import com.jonathan.course.repositories.PaymentRepository;
 import com.jonathan.course.repositories.ProductRepository;
 import com.jonathan.course.repositories.UserRepository;
 
@@ -40,9 +39,6 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
 	private OrderItemRepository orderItemRepository;
-	
-	@Autowired
-	private PaymentRepository paymentRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
